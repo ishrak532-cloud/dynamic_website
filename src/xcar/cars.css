@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bree+Serif&family=Changa+One:ital@0;1&family=DM+Serif+Display:ital@0;1&family=Emilys+Candy&family=Gravitas+One&family=Lexend+Deca:wght@100..900&family=Outfit:wght@100..900&family=Pacifico&family=Princess+Sofia&family=Quintessential&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Elite&family=Special+Gothic+Expanded+One&display=swap');
+.navbar-brand{
+        color: #031b25;
+        font-family: "Permanent Marker", cursive;
+  font-weight: 800;
+  font-style: normal;
+      }
+  .navbar-brand:hover{
+    color: #ff4d4d;
+    text-decoration: none;}
+    .made{ 
+  font-family: "Changa One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+    }
+    .Eqt{
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+    }
+.form-work{
+    font-family: "Anton", serif;
+  font-weight: 200;
+  font-style: normal;
+}
+    .one-header {
+     background: linear-gradient(135deg, #AFDDE5, #EDE8F5);
+    }
+    .imag-img {
+      height: 200px;
+ object-fit: cover;
+    }
+  .navbar{background-color: #8fc1e9;}
+  .tle{        
+    font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-style: normal;}
+  .tlel{        font-family: "Changa One", sans-serif;
+  font-weight: 400;
+  font-style: normal;}
+  .rated{       font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;}
+  .uty{
+    color: #16bc48;
+  }
+  .ut{
+    font-family: "Roboto Condensed", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  }
+  .chart{
+    background:linear-gradient(135deg, #84ceeb,#bb70e6);
+  }
