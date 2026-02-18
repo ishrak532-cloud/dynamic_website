@@ -1,4 +1,7 @@
-CREATE TABLE IF NOT EXISTS cars (
+
+DROP TABLE IF EXISTS cars;
+
+CREATE TABLE cars (
   id INT AUTO_INCREMENT PRIMARY KEY,
   model VARCHAR(100) NOT NULL,
   description TEXT NOT NULL,
@@ -6,24 +9,34 @@ CREATE TABLE IF NOT EXISTS cars (
   status VARCHAR(30) NOT NULL DEFAULT 'Available',
   image VARCHAR(255) DEFAULT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-INSERT INTO cars (model, description, price, status, image) VALUES
-('Mercedes M4', 'Great performance and premium interior.', 57850.00, 'Available', 'cars10.jpg'),
-('Mercedes C63', 'Powerful brake system and smart features.', 65120.00, 'Premium', 'cars3.jpg'),
-('Mercedes E5', 'Comfort-focused ride, great engine.', 49990.00, 'Available', 'cars7.jpg');
-CREATE TABLE IF NOT EXISTS requests (
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+DROP TABLE IF EXISTS requests;
+
+CREATE TABLE requests (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  car_id INT NOT NULL,
-  name VARCHAR(100) NOT NULL,
+  fullname VARCHAR(150) NOT NULL,
   email VARCHAR(150) NOT NULL,
+  phone VARCHAR(50) NOT NULL,
+  car_model VARCHAR(150) NOT NULL,
   message TEXT NOT NULL,
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  FOREIGN KEY (car_id) REFERENCES cars(id) ON DELETE CASCADE
-);
-CREATE TABLE IF NOT EXISTS site_stats (
+  status VARCHAR(50) NOT NULL DEFAULT 'Pending',
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+DROP TABLE IF EXISTS site_stats;
+
+CREATE TABLE site_stats (
   id INT PRIMARY KEY,
-  total_visits INT DEFAULT 0,
-  total_requests INT DEFAULT 0
-);
-INSERT INTO site_stats (id, total_visits, total_requests)
-VALUES (1, 0, 0);
+  total_cars INT NOT NULL DEFAULT 0,
+  available_cars INT NOT NULL DEFAULT 0,
+  offer_requests INT NOT NULL DEFAULT 0,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO site_stats (id, total_cars, available_cars, offer_requests)
+VALUES (1, 0, 0, 0)
+ON DUPLICATE KEY UPDATE id=id;
+INSERT INTO cars (model, description, price, status, image) VALUES
+('Mercedes M4', 'Great performance.', 45000.00, 'Available', 'carsh.jpg'),
+('Mercedes X5', 'great for roads.', 52000.00, 'Available', 'cars7.jpg'),
+('Mercedes A6', 'Comfortable and best car ever.', 39000.00, 'Sold', 'cars3.jpg');
