@@ -89,3 +89,154 @@ if ($res && $res->num_rows > 0) {
 
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <?php
+     $res = $conn->query("SELECT * FROM cars ORDER BY id DESC LIMIT 3");
+if (!$res) {
+  die("SQL ERROR: " . $conn->error);
+}
+
+while ($car = $res->fetch_assoc()):
+
+    ?>
+      <div class="col">
+        <div class="card h-100 rounded-4 shadow">
+          <img src="images/<?php echo htmlspecialchars($car['image']); ?>" class="card-img-top" style="height:200px; object-fit:cover;" alt="">
+          <div class="card-body">
+            <h5 class="fw-bold"><?php echo htmlspecialchars($car['model']); ?></h5>
+            <p class="text-muted mb-2"><?php echo htmlspecialchars($car['description']); ?></p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="fw-bold text-danger">€<?php echo htmlspecialchars($car['price']); ?></span>
+              <span class="badge text-bg-success"><?php echo htmlspecialchars($car['status']); ?></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    <?php endwhile; ?>
+  </div>
+</section>
+<section class="container my-5">
+  <h2 class="fw-bold col-12">Live Update</h2>
+  <div class="row g-4 text-center">
+
+    <div class="col-12 col-md-4">
+      <div class="p-4 rounded-4 shadow bg-white">
+        <div class="fs-2 fw-bold text-danger"><?php echo htmlspecialchars($stats['total_cars']); ?>
+
+
+</div>
+        <div class="text-muted">Total Cars</div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-4">
+      <div class="p-4 rounded-4 shadow bg-white">
+        <div class="fs-2 fw-bold text-danger"><?php echo htmlspecialchars($stats['available_cars']); ?></div>
+        <div class="text-muted">Available Now</div>
+
+      </div>
+    </div>
+
+    <div class="col-12 col-md-4">
+      <div class="p-4 rounded-4 shadow bg-white">
+        <div class="fs-2 fw-bold text-danger"><?php echo htmlspecialchars($stats['offer_requests']); ?></div>
+        <div class="text-muted">Offer Requests</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    <main>
+        <section class="text-start text-md-center mt-5">
+            <h1 class="rated">Updated Cars Collection</h1>
+            <p class="text-danger">Best Cars</p>
+            <hr class="w-25 mx-auto border-danger">
+            <div class="row g-5 mt-3 row-cols-1 row-cols-sm-2 row-cols-md-3 px-5">
+                <div class="col">
+                    <img class="w-100 h-100" src="images/cars14.jpg" alt="">
+                </div>
+                <div class="col"><img class="w-100 h-100" src="images/cars6.jpg" alt=""></div>
+                <div class="col"><img class="w-100 h-100" src="images/cars8.jpg" alt=""></div>
+            </div>
+        </section>
+        <section class="chart mt-4 arrival-bg py-4 rounded">
+            <h1 class="rated text-center mt-5">
+            New Arrival
+        </h1>
+        <div class="row row-cols-1 row-cols-md-3 g-4 px-3">
+            <div class="col">
+              <div class="card h-100 rounded-2">
+                <img src="images/cars10.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="tlel card-title">Mercedes M4</h5>
+                  <p class="card-text">Our most rated car this year.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="cars.php" class="btn btn-outline-danger">Purchase</a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 rounded-2">
+                <img src="images/cars3.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="tlel card-title">Mercedes C63</h5>
+                  <p class="card-text">This car has brand new technology engine.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="cars.php" class="btn btn-outline-danger">Purchase</a>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 rounded-2">
+                <img src="images/cars7.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="tlel card-title">Mercedes E5</h5>
+                  <p class="card-text">This is a 2 seater mercedes.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="cars.php" class="btn btn-outline-danger">Purchase</a>
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>
+    <section class="mt-5">
+        <h1 class="rated text-center py-5">Trust <span class="rated text-warning">Indicators</span></h1>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+              <div class="card text-center">
+                <img src="images/icons/satisfaction.png" class="card-img-top w-25 mx-auto mt-3" alt="...">
+                <div class="card-body">
+                  <h5 class="text-primary">5 Star Rating</h5>
+                  <p class="text-danger">
+                </p>
+                <p class="card-text">We Have More Than Ten Million Five Star Rating</p>
+
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card text-center">
+                <img src="images/icons/trust.png" class="card-img-top w-25 mx-auto mt-3" alt="...">
+                <div class="card-body">
+                  <h5 class="text-primary">Trusted</h5>
+                  <p class="text-danger">
+                </p>
+                <p class="card-text">Trusted By More Than 100000 Customers and by car enthusiasts</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card text-center">
+                <img src="images/icons/followers.png" class=" card-img-top w-25 mx-auto mt-3" alt="...">
+                <div class="card-body">
+              <h5 class="text-primary">Selling</h5>  
+                  <p class="text-danger">
+                </p>
+                <p class="card-text">We Sold More Than One Thousand Cars This Year</p>
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>
