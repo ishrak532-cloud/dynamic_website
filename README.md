@@ -20,7 +20,9 @@ Created Forms
 We have created an offer form in cars.php from where users can send request to buy a car also we included js in it so thats why
 the user can't put any invalid or empty data. Also the car model box updates automatically when we add a new car from admin panel.
 Also the user needs to put a valid phone address otherwise the submit button will not work.
-
+Admin panel:
+Username: admin
+Password: 1234
 Form 1:Send Offer form: Link to the related code file (github) |http://shell.hamk.fi/~amk1011334/webdev/src/xcar/cars.php | Validations Applied
 Technology used:
 Frontend:
