@@ -240,3 +240,81 @@ while ($car = $res->fetch_assoc()):
             </div>
           </div>
     </section>
+    
+<section id="unique" class="py-5 mt-5 bg-white soft-card round-24 px-3">
+  <h1 class="rated text-center section-title">Find Your <span class="rated text-danger">Match</span></h1>
+  <p class="text-center text-muted">Pick a lifestyle and we will suggest the best car type for you</p>
+  <hr class="w-25 mx-auto border-danger">
+
+  <div class="row row-cols-1 row-cols-md-4 g-4 mt-4">
+    <div class="col">
+      <div class="card h-100 text-center soft-card round-24 p-2">
+        <i class="fa-solid fa-briefcase fa-2x text-danger d-block mx-auto mb-4"></i>
+        <h5 class="fw-bold">Daily Use</h5>
+        <p class="text-muted">Fuel efficient, easy parking.</p>
+        <a href="cars.php" class="btn btn-outline-danger">View Cars</a>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card h-100 text-center soft-card round-24 p-2">
+        <i class="fa-solid fa-people-group fa-2x text-danger d-block mx-auto mb-4"></i>
+        <h5 class="fw-bold">Family First Priority</h5>
+        <p class="text-muted">We provide safety and comfort.</p>
+        <a href="cars.php" class="btn btn-outline-danger">View Cars</a>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card h-100 text-center soft-card round-24 p-2">
+        <i class="fa-solid fa-bolt fa-2x text-danger d-block mx-auto mb-4"></i>
+        <h5 class="fw-bold">Speed Lover</h5>
+        <p class="text-muted">sporty feel with performance.</p>
+        <a href="cars.php" class="btn btn-outline-danger">View Cars</a>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card h-100 text-center soft-card round-24 p-2">
+        <i class="fa-solid fa-leaf fa-2x text-danger d-block mx-auto mb-4"></i>
+        <h5 class="fw-bold">Eco Friendly</h5>
+        <p class="text-muted">Hybrid and electric options.</p>
+        <a href="cars.php" class="btn btn-outline-danger">View Cars</a>
+      </div>
+    </div>
+  </div>
+</section>
+    </main>
+
+    <footer class="bg-dark py-5">
+        <div class="row row-cols-1 row-cols-md-2">
+            <div class="col text-light">
+                <div class="d-flex">
+                    <p class="ms-5 mt-3">Download  Now
+                    </p>
+                    <p class="ms-3 mt-3">License</p>
+                </div>
+                <div class="d-flex ps-5">
+                    <p class="p-2">About</p>
+                    <p class="p-2">Features</p>
+                    <p class="p-2">Pricing</p>
+                    <p class="p-2">Careers</p>
+                    <p class="p-2">Help</p>
+                    <p class="p-2">Privacy Policy</p>
+                </div>
+                <p class="ps-5">© 2026 XCARS SHOP All rights reserved.</p>
+            </div>
+            <div class="">
+            <div class="col text-light">
+                <h4 style="margin-left: 200px;">Get the app</h4>
+                <button class="d-flex btn align-items-center btn-outline-light mt-3 rounded-4 " style="margin-left: 200px; width: 250px;
+                "><img class="ms-2" src="apple-logo-svgrepo-com.svg" style="width: 12%;"   alt="">  <div class="ms-3">  Download on the<h3>App Store</h3></div></button>
+                            <button class="d-flex btn align-items-center btn-outline-light mt-3 rounded-4 " style="margin-left: 200px; width: 250px;
+                            "><img class="ms-2" src="google-play-store-seeklogo.com-1.svg" style="width: 12%;"   alt="">  <div class="ms-3">  Download on the<h3>Play Store</h3></div></button>
+            </div>
+        </div>
+        </div>
+    </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</html>
