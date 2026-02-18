@@ -1,3 +1,34 @@
+<?php
+require_once __DIR__ . "/db.php";
+$success = false;
+$error = "";
+if (isset($_POST['send_request'])) {
+    $full  = trim($_POST['fullname'] ?? '');
+    $mail     = trim($_POST['email'] ?? '');
+    $number     = trim($_POST['phone'] ?? '');
+    $car_model = trim($_POST['car_model'] ?? '');
+    $me   = trim($_POST['message'] ?? '');
+
+    if ($full === "" || $mail === "" || $number === "" || $car_model === "" || $me === "") {
+        $error = "Please fill in all fields.";
+    } elseif (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+        $error = "Please enter a valid email address.";
+    } else {
+        $stmt = $conn->prepare("INSERT INTO requests (fullname, email, phone, car_model, message) VALUES (?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssss", $full, $mail, $number, $car_model, $me);
+        if ($stmt->execute()) {
+            $stmt->close();
+            header("Location: cars.php?sent=1#contact");
+            exit;
+        } else {
+            $error = "Insert failed: " . $stmt->error;
+        }
+        $stmt->close();
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
