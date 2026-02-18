@@ -1,0 +1,43 @@
+version: '3.8'
+services:
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 81:80
+    volumes:
+      - ./src:/var/www/html/
+    restart : always
+    networks:
+      - lan
+      
+  db:
+    image: mysql:8.0.34
+    restart: always 
+    environment: 
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "6034:3306"   
+    volumes: 
+      - dbdata:/var/lib/mysql
+    networks:
+      - lan
+
+  phpmyadmin: 
+    depends_on:
+      - db
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - '82:80'
+    environment:
+      PMA_HOST: db
+    networks:
+      - lan 
+      
+volumes:
+  dbdata:
+networks:
+  lan:
+  
