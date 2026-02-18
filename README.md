@@ -1,7 +1,6 @@
 Database: Database design and CRUD functionality.
 Javascript functions: Js validation and events.
 UI design: Basic UI design and other works
-
 Database
 We designed the CRUD based functionality inside the admin panel also in the homepage of the website the live stats is connected.
 
