@@ -37,6 +37,7 @@ INSERT INTO site_stats (id, total_cars, available_cars, offer_requests)
 VALUES (1, 0, 0, 0)
 ON DUPLICATE KEY UPDATE id=id;
 INSERT INTO cars (model, description, price, status, image) VALUES
-('Mercedes M4', 'Great performance.', 45000.00, 'Available', 'carsh.jpg'),
+('Mercedes M4', 'Great performance.', 45000.00, 'Available', 'carsh2.jpg'),
 ('Mercedes X5', 'great for roads.', 52000.00, 'Available', 'cars7.jpg'),
-('Mercedes A6', 'Comfortable and best car ever.', 39000.00, 'Sold', 'cars3.jpg');
+('Mercedes A6', 'Comfortable and best car ever.', 39000.00, 'Available', 'cars3.jpg');
+
