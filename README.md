@@ -3,9 +3,10 @@
 ## Database: Database design and CRUD functionality.
 ## Javascript functions: Js validation and events.
 ## UI design: Basic UI design and other works.
-
+## htaccess: admin panel cant be accesed without username and password.
 ## Database
-- We designed the CRUD based functionality inside the admin panel also in the homepage of the website the live stats is connected.
+- We designed the CRUD based functionality inside the admin panel also in the homepage of the website the live stats is connected. in the admin requests
+  you can mark order as done or can delete orders.
 ## JS validation and events
 - We included JS validation and events on search bar and in the offer form.
 ## UI design
