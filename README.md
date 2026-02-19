@@ -31,18 +31,18 @@ Also the user needs to put a valid phone address otherwise the submit button wil
 ## Form 1:Send Offer form: http://shell.hamk.fi/~amk1011334/webdev/src/xcar/cars.php 
 
 ## 🛠 Technology used:
-Frontend:
-1.HTML5
-2.CSS3
-3.Javascript
-4.Bootstrap5
-Backend:
-1.PHP
-2.MySQL
-Database tools:
-1.phpMyAdmin
-2.InnoDB Engine
-Development tools:
-1.VS Code
-2.Docker
-3.Git & Github
+## Frontend:
+- 1.HTML5
+- 2.CSS3
+- 3.Javascript
+- 4.Bootstrap5
+## Backend:
+- 1.PHP
+- 2.MySQL
+## Database tools:
+- 1.phpMyAdmin
+- 2.InnoDB Engine
+## Development tools:
+- 1.VS Code
+- 2.Docker
+- 3.Git & Github
