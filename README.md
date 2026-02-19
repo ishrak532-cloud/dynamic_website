@@ -4,6 +4,7 @@
 ## Javascript functions: Js validation and events.
 ## UI design: Basic UI design and other works.
 ## htaccess: admin panel cant be accesed without username and password.
+## live stats: A function to keep or statistics updated.
 ## Database
 - We designed the CRUD based functionality inside the admin panel also in the homepage of the website the live stats is connected. in the admin requests
   you can mark order as done or can delete orders.
@@ -11,6 +12,8 @@
 - We included JS validation and events on search bar and in the offer form.
 ## UI design
 - We designed the UI beautifully with matching colors so that it looks attractive.
+##live stats
+- in the homepage there is live stats which can be updated from admin panel.
 
 ## Database Tables
 - **Md. Ishrak Rahman(Team Lead): Offer Form table and admin requests, also added htaccess.
