@@ -2,7 +2,7 @@
 
 ## Database: Database design and CRUD functionality.
 ## Javascript functions: Js validation and events.
-## UI design: Basic UI design and other works
+## UI design: Basic UI design and other works.
 
 ## Database
 - We designed the CRUD based functionality inside the admin panel also in the homepage of the website the live stats is connected.
@@ -15,7 +15,7 @@
 - **Md. Ishrak Rahman(Team Lead): Offer Form table and admin requests, also added htaccess.
 - link: http://shell.hamk.fi/~amk1011334/webdev/src/xcar/admin/admin_requests.php
 - link: http://shell.hamk.fi/~amk1011334/webdev/src/xcar/cars.php
-- **Mia Md Husain: Live stats admin
+- **Mia Md Husain: Live stats admin.
 - live stats link: http://shell.hamk.fi/~amk1013200/webdev/src/xcar/admin/admin_stats.php
 - **Simanto Rahat: car ad update, adding new car and editing car ads.
 - adding new car link: http://shell.hamk.fi/~amk1013728/webdev/src/xcar/admin/car_create.php
