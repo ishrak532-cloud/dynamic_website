@@ -16,7 +16,8 @@
 - link: http://shell.hamk.fi/~amk1011334/webdev/src/xcar/admin/admin_requests.php
 - link: http://shell.hamk.fi/~amk1011334/webdev/src/xcar/cars.php
 - **Mia Md Husain: Live stats admin link: 
-- **Simanto Rahat: car ad update, adding new car and editing car ads. link: 
+- **Simanto Rahat: car ad update, adding new car and editing car ads.
+- adding new car link: http://shell.hamk.fi/~amk1013728/webdev/src/xcar/admin/car_create.php
 
 ## ER Diagram
 ![ER Diagram](diagramsubmit.png)
