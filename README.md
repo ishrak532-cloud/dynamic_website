@@ -18,7 +18,8 @@
 - **Mia Md Husain: Live stats admin link: 
 - **Simanto Rahat: car ad update, adding new car and editing car ads. link: 
 
-diagramsubmit.png
+## ER Diagram
+![ER Diagram](diagramsubmit.png)
 
 ## 🔐 Admin panel:
 - Username: admin
