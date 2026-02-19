@@ -116,3 +116,166 @@ if (!$result) {
              style="margin-top:60px; width: 400px; height: 120px;">
       </section>
     </div>
+
+    <div class="col-12 col-lg-7">
+      <div class="p-4 rounded-4 h-100" style="background-color:#2078dc;">
+        <h3 class="fw-bold mb-3 text-white">Request Offer</h3>
+<?php if (isset($_GET['sent'])): ?>
+  <div class="alert alert-success">✅ Request sent successfully!</div>
+<?php endif; ?>
+
+<?php if (!empty($error)): ?>
+  <div class="alert alert-danger"><?php echo htmlspecialchars($error); ?></div>
+<?php endif; ?>
+
+        <form method="post" action="cars.php" id="myForm">
+          <div class="row g-3">
+            <div class="col-md-4">
+              <label class="form-work text-white">Full Name</label>
+<input type="text" id="fullname" name="fullname" class="form-control" placeholder="Your name" required>
+<small id="fullnameErr" class="text-warning"></small>
+
+            </div>
+
+            <div class="col-md-4">
+              <label class="form-work text-white">Email</label>
+    <input type="email" id="email" name="email" class="form-control" placeholder="your mail" required>
+<small id="emailErr" class="text-warning"></small>
+
+            </div>
+
+            <div class="col-md-4">
+              <label class="form-work text-white">Phone</label>
+<input type="tel" id="phone" name="phone" class="form-control" placeholder="+358......." required>
+<small id="phoneErr" class="text-warning"></small>
+
+            </div>
+
+            <div class="col-md-4">
+              <label class="form-work text-white">Car Model</label>
+       <select class="form-select" id="car_model" name="car_model" required>
+<small id="modelErr" class="text-warning"></small>
+
+                <option value="" selected disabled>Select a model</option>
+                <?php
+                  $cars2 = $conn->query("SELECT model FROM cars");
+                  while($c = $cars2->fetch_assoc()){
+                    echo "<option>".htmlspecialchars($c['model'])."</option>";
+                  }
+                ?>
+              </select>
+            </div>
+
+            <div class="col-12">
+              <label class="form-work text-white">Message</label>
+    <textarea id="message" name="message" class="form-control" rows="4" placeholder="Write here.." required></textarea>
+<small id="msgErr" class="text-warning"></small>
+
+            </div>
+
+            <div class="d-flex col-12 gap-2">
+              <button type="submit" name="send_request" class="btn btn-danger">Send Request</button>
+              <a href="index.php" class="btn btn-outline-light">Back to Home</a>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+</section>
+
+</main>
+
+  <footer class="bg-dark text-light mt-5 py-4">
+    <div class="container  justify-content-between d-flex gap-2">
+    <div>© 2026 XCARS SHOP All rights reserved.</div>
+      <div>
+       <a class="text-light text-decoration-none me-4">Privacy Policy</a>
+      <a class="text-light text-decoration-none">Terms of Service</a>
+   </div>
+    </div>
+  </footer>
+  <script>
+  const form = document.getElementById("myForm");
+
+  const fullname = document.getElementById("fullname");
+  const email = document.getElementById("email");
+  const phone = document.getElementById("phone");
+  const carModel = document.getElementById("car_model");
+  const message = document.getElementById("message");
+
+  const fullnameErr = document.getElementById("fullnameErr");
+  const emailErr = document.getElementById("emailErr");
+  const phoneErr = document.getElementById("phoneErr");
+  const modelErr = document.getElementById("modelErr");
+  const msgErr = document.getElementById("msgErr");
+
+  function setErr(el, errEl, text) {
+    errEl.textContent = text;
+    el.classList.add("is-invalid");
+    el.classList.remove("is-valid");
+  }
+  function clearErr(el, errEl) {
+    errEl.textContent = "";
+    el.classList.remove("is-invalid");
+    el.classList.add("is-valid");
+  }
+
+  
+  form.addEventListener("submit", function(e) {
+    let ok = true;
+
+    if (fullname.value.trim().length < 2) { setErr(fullname, fullnameErr, "Name must be at least 2 characters."); ok = false; }
+    else { clearErr(fullname, fullnameErr); }
+
+    if (!email.value.includes("@")) { setErr(email, emailErr, "Enter a valid email."); ok = false; }
+    else { clearErr(email, emailErr); }
+
+    if (phone.value.trim().length < 7) { setErr(phone, phoneErr, "Enter a valid phone number."); ok = false; }
+    else { clearErr(phone, phoneErr); }
+
+    if (carModel.value === "") { setErr(carModel, modelErr, "Select a car model."); ok = false; }
+    else { clearErr(carModel, modelErr); }
+
+    if (message.value.trim().length < 10) { setErr(message, msgErr, "Message must be at least 10 characters."); ok = false; }
+    else { clearErr(message, msgErr); }
+
+    if (!ok) e.preventDefault(); 
+  });
+
+
+  fullname.addEventListener("input", () => fullname.value.trim().length >= 2 ? clearErr(fullname, fullnameErr) : setErr(fullname, fullnameErr, "Name must be at least 2 characters."));
+  email.addEventListener("input", () => email.value.includes("@") ? clearErr(email, emailErr) : setErr(email, emailErr, "Enter a valid email."));
+  phone.addEventListener("input", () => phone.value.trim().length >= 7 ? clearErr(phone, phoneErr) : setErr(phone, phoneErr, "Enter a valid phone number."));
+  carModel.addEventListener("change", () => carModel.value !== "" ? clearErr(carModel, modelErr) : setErr(carModel, modelErr, "Select a car model."));
+  message.addEventListener("input", () => message.value.trim().length >= 10 ? clearErr(message, msgErr) : setErr(message, msgErr, "Message must be at least 10 characters."));
+
+</script>
+<script>
+  const searchInput = document.getElementById("searchInput");
+  const searchBtn = document.getElementById("searchBtn");
+  const noResults = document.getElementById("noResults");
+  function filterCars() {
+  const q = searchInput.value.trim().toLowerCase();
+    const cars = document.querySelectorAll(".car-item");
+  let shown = 0;
+
+    cars.forEach(car => {
+      const modelEl = car.querySelector(".car-model");
+     const model = modelEl ? modelEl.textContent.toLowerCase() : "";
+    const match = model.includes(q);
+     car.style.display = match ? "" : "none";
+     if (match) shown++;
+    });
+    noResults.style.display = (shown === 0) ? "block" : "none";
+  }
+  searchInput.addEventListener("input", filterCars);
+  searchBtn.addEventListener("click", filterCars);
+  searchInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") filterCars();
+  });
+</script>
+
+</body>
+</html>
