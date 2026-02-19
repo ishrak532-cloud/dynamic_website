@@ -1,30 +1,36 @@
-Database: Database design and CRUD functionality.
-Javascript functions: Js validation and events.
-UI design: Basic UI design and other works
-Database
-We designed the CRUD based functionality inside the admin panel also in the homepage of the website the live stats is connected.
+#XCARS
 
-JS validation and events
-We included JS validation and events on search bar and in the offer form.
+## Database: Database design and CRUD functionality.
+## Javascript functions: Js validation and events.
+## UI design: Basic UI design and other works
 
-UI design
-We designed the UI beautifully with matching colors so that it looks attractive.
+## Database
+- We designed the CRUD based functionality inside the admin panel also in the homepage of the website the live stats is connected.
+## JS validation and events
+- We included JS validation and events on search bar and in the offer form.
+## UI design
+- We designed the UI beautifully with matching colors so that it looks attractive.
 
-Database Tables
-Md. Ishrak Rahman(Team Lead): Offer Form table and admin requests
-Mia Md Husain: car ad update
-Simanto Rahat: Live stats
-Include the ER Diagram of the database.
+## Database Tables
+- **Md. Ishrak Rahman(Team Lead): Offer Form table and admin requests, also added htaccess.
+- link: http://shell.hamk.fi/~amk1011334/webdev/src/xcar/admin/admin_requests.php
+- link: http://shell.hamk.fi/~amk1011334/webdev/src/xcar/cars.php
+- **Mia Md Husain: Live stats admin link: 
+- **Simanto Rahat: car ad update, adding new car and editing car ads. link: 
 
-Created Forms
-We have created an offer form in cars.php from where users can send request to buy a car also we included js in it so thats why
+diagramsubmit.png
+
+## 🔐 Admin panel:
+- Username: admin
+- Password: 1234
+## Created Forms
+- We have created an offer form in cars.php from where users can send request to buy a car also we included js in it so thats why
 the user can't put any invalid or empty data. Also the car model box updates automatically when we add a new car from admin panel.
 Also the user needs to put a valid phone address otherwise the submit button will not work.
-Admin panel:
-Username: admin
-Password: 1234
-Form 1:Send Offer form: Link to the related code file (github) |http://shell.hamk.fi/~amk1011334/webdev/src/xcar/cars.php | Validations Applied
-Technology used:
+
+## Form 1:Send Offer form: http://shell.hamk.fi/~amk1011334/webdev/src/xcar/cars.php 
+
+## 🛠 Technology used:
 Frontend:
 1.HTML5
 2.CSS3
