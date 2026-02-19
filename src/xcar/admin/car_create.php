@@ -1,3 +1,32 @@
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+require_once __DIR__ . "/../db.php";
+$error = "";
+if (isset($_POST['create'])) {
+  $modelnum  = trim($_POST['model'] ?? "");
+  $descrip   = trim($_POST['description'] ?? "");
+  $price  = (float)($_POST['price'] ?? 0);
+  $stats = trim($_POST['status'] ?? "");
+  $pic  = trim($_POST['image'] ?? "");
+
+  if ($modelnum === "" || $descrip === "" || $stats === "") {
+  $error = "Please fill all required fields.";
+  } else {
+  $stmt = $conn->prepare("INSERT INTO cars (model, description, price, status, image) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssdss", $modelnum, $descrip, $price, $stats, $pic);
+    if ($stmt->execute()) {
+    $stmt->close();
+      header("Location: admin_cars.php");
+     exit;
+    } else {
+    $error = "Insert fail: " . $stmt->error;
+      $stmt->close();
+    }
+  }
+}
+?>
 <!doctype html>
 <html lang="en">
 <head>
