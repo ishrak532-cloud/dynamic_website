@@ -1,3 +1,23 @@
+<?php
+require_once __DIR__ . "/../db.php";
+
+if (isset($_POST['save_stats'])) {
+  $totalofcar = (int)($_POST['total_cars'] ?? 0);
+  $availability = (int)($_POST['available_cars'] ?? 0);
+  $requcount  = (int)($_POST['offer_requests'] ?? 0);
+
+  $stmt = $conn->prepare("UPDATE site_stats SET total_cars=?, available_cars=?, offer_requests=? WHERE id=1");
+  $stmt->bind_param("iii", $totalofcar, $availability, $requcount);
+  $stmt->execute();
+  $stmt->close();
+
+  header("Location: admin_stats.php?saved=1");
+  exit;
+}
+$stats = ["total_cars"=>0,"available_cars"=>0,"offer_requests"=>0,"updated_at"=>""];
+$res = $conn->query("SELECT * FROM site_stats WHERE id=1");
+if ($res && $res->num_rows > 0) $stats = $res->fetch_assoc();
+?>
 <!doctype html>
 <html lang="en">
 <head>
