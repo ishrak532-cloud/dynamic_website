@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Admin Area - XCARS"
+AuthUserFile /home/amk1011334/public_html/webdev/src/xcar/admin/.htpasswd
+Require valid-user
